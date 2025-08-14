@@ -13,9 +13,9 @@ from dotenv import load_dotenv
 try:
     from langchain.document_loaders import WikipediaLoader
     from langchain.text_splitter import RecursiveCharacterTextSplitter
-    from langchain.embeddings import OpenAIEmbeddings
+    from langchain.embeddings import HuggingFaceBgeEmbeddings #OpenAIEmbeddings
     from langchain.vectorstores import FAISS
-    from langchain.chat_models import ChatOpenAI
+    # from langchain.chat_models import ChatOpenAI
     from langchain.schema import Document
     IMPORTS_AVAILABLE = True
 except ImportError as e:
@@ -70,7 +70,7 @@ class TestRAGComponents(unittest.TestCase):
         mock_faiss.return_value = mock_vector_store
         
         # This would normally create a vector store
-        embeddings = OpenAIEmbeddings()
+        embeddings = HuggingFaceBgeEmbeddings()
         vector_store = FAISS.from_documents(self.mock_docs, embeddings)
         
         mock_faiss.assert_called_once()
@@ -115,7 +115,7 @@ class TestRAGIntegration(unittest.TestCase):
     def test_embeddings_creation(self):
         """Test creating embeddings"""
         try:
-            embeddings = OpenAIEmbeddings(openai_api_key=self.api_key)
+            embeddings = HuggingFaceBgeEmbeddings(hf_api_key=self.api_key)
             
             # Test single text embedding
             embedding = embeddings.embed_query("What is artificial intelligence?")
