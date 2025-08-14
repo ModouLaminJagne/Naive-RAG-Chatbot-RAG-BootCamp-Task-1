@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Streamlit App",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit",
+            "args": ["run", "app.py"],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run CLI RAG",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "${workspaceFolder}/cli_rag.py",
+            "args": ["--topics", "Machine Learning", "AI"],
+            "console": "integratedTerminal"
+        }
+    ]
+}

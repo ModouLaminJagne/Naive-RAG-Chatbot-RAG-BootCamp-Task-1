@@ -1,0 +1,34 @@
+{
+    "python.defaultInterpreterPath": "./venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+    "python.sortImports.args": ["--profile", "black"],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        ".pytest_cache": true,
+        "venv": false
+    }
+}
+// {
+//     "python.analysis.typeCheckingMode": "basic",
+//     "python.analysis.diagnosticMode": "workspace",
+//     "python.analysis.autoSearchPaths": true,
+//     "python.analysis.useLibraryCodeForTypes": true,
+//     "editor.formatOnSave": true,
+//     "editor.codeActionsOnSave": {
+//         "source.organizeImports": true
+//     },
+//     "python.languageServer": "Pylance"
+// }
+// {
+//     "python.envFile": "${workspaceFolder}/.env",
+//     "python.autoComplete.addBrackets": true,
+//     "python.analysis.indexing": true,
+//     "python.analysis.logLevel": "Error",
+//     "python.analysis.inlayHints.variableTypes.enabled": true,
+//     "python.analysis.inlayHints.functionReturnTypes.enabled": true
+// }
