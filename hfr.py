@@ -161,14 +161,14 @@ def main():
     st.markdown("---")
     
     # Important notice
-    st.info("""
-    🔋 **Performance Note**: This uses free, local models which are:
-    - ✅ Completely free forever
-    - ✅ No API keys required  
-    - ✅ Privacy-friendly (runs locally)
-    - ⚠️ Slower than OpenAI models
-    - ⚠️ May require model downloads (first time)
-    """)
+    # st.info("""
+    # 🔋 **Performance Note**: This uses free, local models which are:
+    # - ✅ Completely free forever
+    # - ✅ No API keys required  
+    # - ✅ Privacy-friendly (runs locally)
+    # - ⚠️ Slower than OpenAI models
+    # - ⚠️ May require model downloads (first time)
+    # """)
     
     # Initialize chatbot
     if "free_chatbot" not in st.session_state:
