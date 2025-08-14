@@ -151,24 +151,25 @@ Answer:"""
 
 def main():
     st.set_page_config(
-        page_title="🆓 Free RAG Chatbot",
-        page_icon="🆓",
+        page_title="🤖 Naive RAG Chatbot",
+        page_icon="🤖",
         layout="wide"
     )
     
-    st.title("🆓 Free RAG Chatbot")
+    st.title("🤖 Naive RAG Chatbot")
+    st.markdown("*A Naive Retrieval-Augmented Generation (RAG) system that can answer user questions based on custom documents of your choice.*")
     st.markdown("*No API keys required - uses free Hugging Face models*")
     st.markdown("---")
     
     # Important notice
-    # st.info("""
-    # 🔋 **Performance Note**: This uses free, local models which are:
-    # - ✅ Completely free forever
-    # - ✅ No API keys required  
-    # - ✅ Privacy-friendly (runs locally)
-    # - ⚠️ Slower than OpenAI models
-    # - ⚠️ May require model downloads (first time)
-    # """)
+    st.info("""
+    🔋 **Performance Note**: This Chatbot uses free, local models which are:
+    - ✅ Completely free forever
+    - ✅ No API keys required  
+    - ✅ Privacy-friendly (runs locally)
+    - ⚠️ Slower than OpenAI models
+    - ⚠️ May require model downloads (first time)
+    """)
     
     # Initialize chatbot
     if "free_chatbot" not in st.session_state:
