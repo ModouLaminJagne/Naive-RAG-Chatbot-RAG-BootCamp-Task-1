@@ -6,7 +6,7 @@
             "type": "debugpy",
             "request": "launch",
             "module": "streamlit",
-            "args": ["run", "app.py"],
+            "args": ["run", "hfr.py"],
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}"
         },

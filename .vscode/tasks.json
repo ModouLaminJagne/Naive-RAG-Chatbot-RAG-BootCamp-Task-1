@@ -5,7 +5,7 @@
             "label": "Run RAG Chatbot",
             "type": "shell",
             "command": "streamlit",
-            "args": ["run", "app.py"],
+            "args": ["run", "hfr.py"],
             "group": "build",
             "presentation": {
                 "echo": true,
