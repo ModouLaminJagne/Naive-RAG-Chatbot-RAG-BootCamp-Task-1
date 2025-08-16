@@ -50,10 +50,10 @@ Answer:"""
             # model_name = "microsoft/DialoGPT-medium"
             
             # Option 2: Google Flan-T5 (better for Q&A)
-            # model_name = "google/flan-t5-small"
+            model_name = "google/flan-t5-small"
             
             # Option 3: GPT-2 (lightweight)
-            model_name = "gpt2"
+            # model_name = "gpt2"
             
             tokenizer = AutoTokenizer.from_pretrained(model_name)
             model = AutoModelForCausalLM.from_pretrained(model_name)
