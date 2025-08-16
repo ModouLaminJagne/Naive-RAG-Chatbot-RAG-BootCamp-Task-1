@@ -5,10 +5,13 @@ Free RAG Chatbot using Hugging Face models (no API keys required)
 
 import os
 import streamlit as st
-from langchain.document_loaders import WikipediaLoader
+# from langchain.document_loaders import WikipediaLoader
+from langchain_community.document_loaders import WikipediaLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+# from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 # from langchain.llms import HuggingFacePipeline
 from langchain_community.llms import HuggingFacePipeline
 from langchain.prompts import PromptTemplate
