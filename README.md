@@ -241,4 +241,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**Built with ❤️ by ML Jagne for the NSK RAG BootCamp Project-1**
+**Built with ❤️ by ML Jagne for the NSK.AI RAG BootCamp Project-1**
