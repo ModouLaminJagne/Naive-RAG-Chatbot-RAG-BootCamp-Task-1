@@ -2,18 +2,18 @@
 """
 Free RAG Chatbot using Hugging Face models (no API keys required)
 """
+# from langchain.document_loaders import WikipediaLoader
+# from langchain.embeddings import HuggingFaceEmbeddings
+# from langchain.vectorstores import FAISS
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+# from langchain.llms import HuggingFacePipeline
 
 import os
 import streamlit as st
-# from langchain.document_loaders import WikipediaLoader
 from langchain_community.document_loaders import WikipediaLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain.embeddings import HuggingFaceEmbeddings
-# from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
-# from langchain.vectorstores import FAISS
 from langchain_community.vectorstores import FAISS
-# from langchain.llms import HuggingFacePipeline
 from langchain_community.llms import HuggingFacePipeline
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
@@ -55,10 +55,10 @@ Answer:"""
             # model_name = "microsoft/DialoGPT-medium"
             
             # Option 2: Google Flan-T5 (better for Q&A)
-            model_name = "google/flan-t5-small"
+            # model_name = "google/flan-t5-small"
             
             # Option 3: GPT-2 (lightweight)
-            # model_name = "gpt2"
+            model_name = "gpt2"
             
             tokenizer = AutoTokenizer.from_pretrained(model_name)
             model = AutoModelForCausalLM.from_pretrained(model_name)
