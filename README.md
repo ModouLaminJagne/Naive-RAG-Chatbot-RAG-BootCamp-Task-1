@@ -94,7 +94,7 @@ streamlit run hfr.py
 
 ### 6. Access the App
 - Open your browser to `http://localhost:8501`
-- Live Demo Available at `https://https://mlj-nrchatbot.streamlit.app/`
+- Live Demo Available at (https://https://mlj-nrchatbot.streamlit.app/)
 
 ## 💻 Usage Guide
 
