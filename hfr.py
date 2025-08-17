@@ -156,7 +156,7 @@ Answer:"""
 
 def main():
     st.set_page_config(
-        page_title="🤖 Naive RAG Chatbot",
+        page_title="Naive RAG Chatbot",
         page_icon="🤖",
         layout="wide"
     )
