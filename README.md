@@ -1,6 +1,5 @@
-# -Naive-RAG-Chatbot-RAG-BootCamp-Task-1
-Build and deploy your own Naive Retrieval-Augmented Generation (RAG) system that can answer user questions based on custom documents of your choice.
-# 🤖 Naive RAG Chatbot
+# 🤖 Naive-RAG-Chatbot-RAG-BootCamp-Task-1
+A Naive Retrieval-Augmented Generation (RAG) system that can answer user questions based on custom documents of your choice.
 
 A comprehensive Retrieval-Augmented Generation (RAG) chatbot built with LangChain that can answer questions based on Wikipedia articles.
 
