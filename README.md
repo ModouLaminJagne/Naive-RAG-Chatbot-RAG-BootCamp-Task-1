@@ -18,9 +18,9 @@ This project implements a complete RAG pipeline that:
 
 - **Framework**: LangChain + Python
 - **Document Source**: Wikipedia API
-- **Embedding Model**: OpenAI text-embedding-ada-002
+- **Embedding Model**: HuggingfaceEmbedding
 - **Vector Store**: FAISS (Facebook AI Similarity Search)
-- **LLM**: OpenAI GPT-3.5-turbo
+- **LLM**: OpenAI GPT2
 - **Interface**: Streamlit web app
 - **Reranking**: Cosine similarity-based reranking
 
@@ -45,14 +45,22 @@ This project implements a complete RAG pipeline that:
 
 ```
 langchain>=0.1.0
+langchain-community>=0.1.0
+langchain-huggingface>=0.1.0
+gradio>=4.15.0
 streamlit>=1.28.0
 openai>=1.3.0
 faiss-cpu>=1.7.4
 wikipedia>=1.4.0
 scikit-learn>=1.3.0
 numpy>=1.24.0
+transformers>=4.30.0
+sentence-transformers>=2.2.2
+torch>=2.0.0
 python-dotenv>=1.0.0
 tiktoken>=0.5.0
+beautifulsoup4>=4.12.0
+requests>=2.31.0
 ```
 
 ## 🔧 Setup Instructions
@@ -75,23 +83,25 @@ pip install -r requirements.txt
 ```
 
 ### 4. Get OpenAI API Key
-1. Visit [OpenAI API Keys](https://platform.openai.com/api-keys)
+1. Visit [OpenAI API Keys](https://platform.openai.com/api-keys)(If you are using OpenAI Key)
 2. Create a new API key
 3. Keep it secure - you'll enter it in the app
 
 ### 5. Run the Application
 ```bash
-streamlit run app.py
+streamlit run hfr.py
 ```
 
 ### 6. Access the App
 Open your browser to `http://localhost:8501`
+Live Demo Available at `https://https://mlj-nrchatbot.streamlit.app/`
 
 ## 💻 Usage Guide
 
-### Step 1: Configure API Key
-- Enter your OpenAI API key in the sidebar
-- The app will validate and initialize the RAG system
+### I am not usin an OpenAI Key
+<!-- ### Step 1: Configure API Key -->
+<!-- - Enter your OpenAI API key in the sidebar
+- The app will validate and initialize the RAG system -->
 
 ### Step 2: Load Documents
 - Choose topics in the sidebar (default: AI, ML, NLP)
@@ -137,7 +147,8 @@ text_splitter = RecursiveCharacterTextSplitter(
 # Create FAISS vector store
 vector_store = FAISS.from_documents(
     documents=chunks,
-    embedding=OpenAIEmbeddings()
+    embedding=HuggingFaceEmbeddings()
+    # embedding=OpenAIEmbeddings()
 )
 ```
 
@@ -178,11 +189,11 @@ User Query → Embedding → Vector Search → Context Retrieval → LLM → Ans
 
 ## 🚧 Known Limitations
 
-1. **API Costs**: Uses OpenAI API (paid service)
+1. **API Costs**: I Use HuggingFace Embedding so no need for an API cost
 2. **Memory Usage**: FAISS stores all vectors in memory
 3. **Topic Dependency**: Limited to Wikipedia content quality
 4. **No Persistence**: Vector store recreated each session
-5. **Rate Limits**: Subject to OpenAI API rate limits
+5. **Rate Limits**: No rate limits
 
 ## 🔮 Future Enhancements
 
@@ -196,7 +207,7 @@ User Query → Embedding → Vector Search → Context Retrieval → LLM → Ans
 
 ## 🛡️ Security Notes
 
-- Never commit API keys to version control
+- Never commit API keys to version control (If you are using any)
 - Use environment variables for production
 - Implement proper rate limiting for production use
 - Consider input sanitization for user queries
@@ -223,11 +234,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgments
 
 - **LangChain**: For the excellent RAG framework
-- **OpenAI**: For powerful embedding and language models
+- **HuggingFace**: For free and powerful embedding and language models
 - **Streamlit**: For rapid web app development
 - **FAISS**: For efficient similarity search
 - **Wikipedia**: For freely available knowledge
 
 ---
 
-**Built with ❤️ for the RAG community**
+**Built with ❤️ by ML Jagne for the NSK RAG BootCamp Project-1**
