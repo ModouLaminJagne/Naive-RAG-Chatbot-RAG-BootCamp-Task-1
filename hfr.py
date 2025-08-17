@@ -168,12 +168,12 @@ def main():
     
     # Important notice
     st.info("""
-    🔋 **Performance Note**: This Chatbot uses free, local models which are:
-    - ✅ Completely free forever
-    - ✅ No API keys required  
-    - ✅ Privacy-friendly (runs locally)
-    - ⚠️ Slower than OpenAI models
-    - ⚠️ May require model downloads (first time)
+    ### 🚀 Quick Start:
+    1. Choose topics in the sidebar (default ones work great)
+    2. Click "Load Documents" 
+    3. Wait for models to download and process (2-5 minutes first time)
+    4. Ask questions!
+
     """)
     
     # Initialize chatbot
@@ -206,17 +206,20 @@ def main():
             st.sidebar.error("❌ Failed to load documents")
     
     # Main interface
-    st.header("💬 Ask Questions")
+    st.header("💬 To Ask Questions")
     
     # Check if documents are loaded
     if not hasattr(st.session_state, 'documents_loaded'):
         st.info("👈 Please load documents using the sidebar first.")
         st.markdown("""
         ### 🚀 Quick Start:
-        1. Choose topics in the sidebar (default ones work great)
-        2. Click "Load Documents" 
-        3. Wait for models to download and process (2-5 minutes first time)
-        4. Ask questions!
+        
+        🔋 **Performance Note**: This Chatbot uses free, local models which are:
+        - ✅ Completely free forever
+        - ✅ No API keys required  
+        - ✅ Privacy-friendly (runs locally)
+        - ⚠️ Slower than OpenAI models
+        - ⚠️ May require model downloads (first time)
         """)
         return
     
