@@ -163,7 +163,7 @@ def main():
     
     st.title("🤖 Naive RAG Chatbot")
     st.markdown("*A Naive Retrieval-Augmented Generation (RAG) system that can answer user questions based on custom documents of your choice.*")
-    st.markdown("*No API keys required - uses free Hugging Face models*")
+    st.markdown("*Does not require API keys - uses free Hugging Face models*")
     st.markdown("---")
     
     # Important notice
