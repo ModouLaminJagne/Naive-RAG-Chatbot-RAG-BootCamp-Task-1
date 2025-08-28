@@ -1,4 +1,5 @@
 # 🤖 Naive-RAG-Chatbot-RAG-BootCamp-Task-1
+
 A Naive Retrieval-Augmented Generation (RAG) system that can answer user questions based on custom documents of your choice.
 
 A comprehensive Retrieval-Augmented Generation (RAG) chatbot built with LangChain that can answer questions based on Wikipedia articles.
@@ -6,8 +7,9 @@ A comprehensive Retrieval-Augmented Generation (RAG) chatbot built with LangChai
 ## 🎯 Project Overview
 
 This project implements a complete RAG pipeline that:
+
 - Loads documents from Wikipedia
-- Chunks them intelligently 
+- Chunks them intelligently
 - Creates vector embeddings
 - Stores them in a FAISS vector database
 - Retrieves relevant context for user queries
@@ -26,6 +28,7 @@ This project implements a complete RAG pipeline that:
 ## 🚀 Features
 
 ### Core RAG Components ✅
+
 - ✅ **Document Ingestion**: Wikipedia loader with configurable topics
 - ✅ **Intelligent Chunking**: Recursive character splitter with overlap
 - ✅ **Vector Embeddings**: OpenAI embeddings with FAISS storage
@@ -34,6 +37,7 @@ This project implements a complete RAG pipeline that:
 - ✅ **User Interface**: Interactive Streamlit web app
 
 ### Enhanced Features 🌟
+
 - 🔍 **Enhanced Retrieval**: Semantic reranking for better results
 - 📊 **Chunk Visualization**: See exactly what context was retrieved
 - ⚙️ **Configurable Topics**: Load any Wikipedia topics you want
@@ -42,7 +46,7 @@ This project implements a complete RAG pipeline that:
 
 ## 📋 Requirements
 
-```
+```python
 langchain>=0.1.0
 langchain-community>=0.1.0
 langchain-huggingface>=0.1.0
@@ -65,35 +69,41 @@ requests>=2.31.0
 ## 🔧 Setup Instructions
 
 ### 1. Clone the Repository
+
 ```bash
 git clone <your-repo-url>
 cd rag-chatbot
 ```
 
 ### 2. Create Virtual Environment
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 ### 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Get OpenAI API Key
+
 1. Visit [OpenAI API Keys](https://platform.openai.com/api-keys)(If you are using OpenAI Key)
 2. Create a new API key
 3. Keep it secure - you'll enter it in the app
 
 ### 5. Run the Application
+
 ```bash
 streamlit run hfr.py
 ```
 
 ### 6. Access the App
+
 - Open your browser to `http://localhost:8501`
-- Live Demo Available at (https://https://mlj-nrchatbot.streamlit.app/)
+- Live Demo Available at (`https://mljagne-nrchatbot.streamlit.app/`)
 
 ## 💻 Usage Guide
 
@@ -103,12 +113,14 @@ streamlit run hfr.py
 - The app will validate and initialize the RAG system -->
 
 ### Step 2: Load Documents
+
 - Choose topics in the sidebar (default: AI, ML, NLP)
 - Adjust max documents per topic (1-5)
-- Click "Load Documents" 
+- Click "Load Documents"
 - Wait for processing (typically 30-60 seconds)
 
 ### Step 3: Ask Questions
+
 - Type your question in the main input box
 - Optional: Enable "Enhanced Retrieval" for reranking
 - View the generated answer and retrieved context chunks
@@ -126,6 +138,7 @@ Try these questions once you've loaded the default topics:
 ## 📊 How It Works
 
 ### 1. Document Ingestion
+
 ```python
 # Load Wikipedia articles
 loader = WikipediaLoader(query=topic, load_max_docs=max_docs_per_topic)
@@ -133,6 +146,7 @@ docs = loader.load()
 ```
 
 ### 2. Chunking Strategy
+
 ```python
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,      # ~1000 characters per chunk
@@ -142,6 +156,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 ```
 
 ### 3. Vector Storage
+
 ```python
 # Create FAISS vector store
 vector_store = FAISS.from_documents(
@@ -152,6 +167,7 @@ vector_store = FAISS.from_documents(
 ```
 
 ### 4. Retrieval Chain
+
 ```python
 # LangChain Expression Language (LCEL)
 retrieval_chain = (
@@ -166,13 +182,14 @@ retrieval_chain = (
 ```
 
 ### 5. Enhanced Retrieval (Optional)
+
 - Retrieves more chunks initially (k=10)
 - Reranks using cosine similarity
 - Returns top k=4 most relevant chunks
 
 ## 🏗️ Architecture
 
-```
+```python
 User Query → Embedding → Vector Search → Context Retrieval → LLM → Answer
                 ↓
             FAISS Store ← Document Chunks ← Text Splitter ← Wikipedia Loader
